@@ -522,6 +522,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -638,6 +642,10 @@ video {
   justify-content: space-around;
 }
 
+.gap-14 {
+  gap: 3.5rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -711,6 +719,10 @@ video {
 
 .bg-Primary-Button\/70 {
   background-color: rgb(24 98 103 / 0.7);
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-gradient-to-r {
