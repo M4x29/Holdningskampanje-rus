@@ -522,36 +522,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .flex {
   display: flex;
 }
 
 .h-1\/3 {
   height: 33.333333%;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.h-1\/2 {
-  height: 50%;
-}
-
-.h-\[60\%\] {
-  height: 60%;
-}
-
-.h-\[40\%\] {
-  height: 40%;
-}
-
-.h-96 {
-  height: 24rem;
-}
-
-.h-80 {
-  height: 20rem;
 }
 
 .h-12 {
@@ -562,24 +542,24 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-\[40\%\] {
+  height: 40%;
+}
+
+.h-\[60\%\] {
+  height: 60%;
+}
+
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .w-1\/2 {
@@ -596,6 +576,18 @@ video {
 
 .w-32 {
   width: 8rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .cursor-pointer {
@@ -622,19 +614,18 @@ video {
   justify-content: space-around;
 }
 
-.bg-Background {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 251 238 / var(--tw-bg-opacity));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-red-400 {
+.bg-Background {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+  background-color: rgb(250 251 238 / var(--tw-bg-opacity));
+}
+
+.bg-Primary-Button\/60 {
+  background-color: rgb(24 98 103 / 0.6);
 }
 
 .bg-blue-400 {
@@ -647,30 +638,18 @@ video {
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
 .bg-sky-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
 
-.bg-Primary-Button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 98 103 / var(--tw-bg-opacity));
-}
-
-.bg-Primary-Button\/80 {
-  background-color: rgb(24 98 103 / 0.8);
-}
-
-.bg-Primary-Button\/60 {
-  background-color: rgb(24 98 103 / 0.6);
-}
-
-.bg-Primary-Button\/10 {
-  background-color: rgb(24 98 103 / 0.1);
-}
-
-.bg-Primary-Button\/50 {
-  background-color: rgb(24 98 103 / 0.5);
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-gradient-to-r {
@@ -708,9 +687,9 @@ video {
   line-height: 1;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-9xl {
@@ -718,14 +697,17 @@ video {
   line-height: 1;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-slate-50 {
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .transition-all {
