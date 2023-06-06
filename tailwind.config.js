@@ -10,6 +10,13 @@ module.exports = {
         "Secondary-Button": "#f2f4d2",
         Accent: "#671862",
       },
+      animation: {
+        "bounce-slow": {
+          "0%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(50px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
+      },
     },
   },
   plugins: [],

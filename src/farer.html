@@ -20,7 +20,7 @@
         >
           <span
             class="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
-            >Home</span
+            >Hjem</span
           >
         </div></a
       >
@@ -63,38 +63,69 @@
       <div class="h-[40%] text-9xl flex justify-center items-center">
         <h1>FARER</h1>
       </div>
-      <div class="h-[60%] flex justify-around items-center">
-        <div
-          class="text-5xl text-Text w-96 h-96 overflow-hidden rounded-xl cursor-pointer flex justify-center items-center"
-        >
-          <h2 id="helseText" class="absolute z-10 hidden">Helseproblemer</h2>
-          <img
-            src="https://imaginary.abcmedia.no/resize?width=980&interlace=true&url=https%3A%2F%2Fabcnyheter.drpublish.aptoma.no%2Fout%2Fimages%2Farticle%2F%2F2019%2F01%2F10%2F195490686%2F1%2Foriginal%2F6163164.jpg"
-            alt="dog"
-            id="helse"
-            class="h-full w-full object-cover hover:scale-110 hover:brightness-50 transition-all duration-500 ease-in-out"
-          />
-        </div>
-        <div class="w-96 h-96 overflow-hidden rounded-xl">
-          <img
-            src="https://news.fordham.edu/wp-content/uploads/2018/05/Addiction-slider.jpg"
-            alt="dog"
-            id="avhengighet"
-            class="h-full w-full object-cover hover:scale-110 hover:brightness-50 transition-all duration-500 ease-in-out"
-          />
-        </div>
-        <div class="w-96 h-96 overflow-hidden rounded-xl">
-          <img
-            src="https://cloudinary.plyo.website/plyo/image/upload/f_auto,q_auto/c_lfill,g_center,h_1050,w_1920/v2/personskadesiden/xng5hszznlguoavvnhdo.jpg"
-            alt="dog"
-            id="ulykker"
-            class="h-full w-full object-cover hover:scale-110 hover:brightness-50 transition-all duration-500 ease-in-out"
-          />
-        </div>
+      <div
+        class="h-[60%] flex justify-around items-center break-all text-center text-white text-5xl"
+      >
+        <a href="#helseSection"
+          ><div
+            class="w-96 h-96 overflow-hidden rounded-xl cursor-pointer flex justify-center items-center"
+          >
+            <h2 id="helseText" class="absolute z-10 hidden">
+              Helse <br />problemer
+            </h2>
+            <img
+              src="https://imaginary.abcmedia.no/resize?width=980&interlace=true&url=https%3A%2F%2Fabcnyheter.drpublish.aptoma.no%2Fout%2Fimages%2Farticle%2F%2F2019%2F01%2F10%2F195490686%2F1%2Foriginal%2F6163164.jpg"
+              alt="dog"
+              id="helse"
+              class="h-full w-full object-cover hover:scale-110 hover:brightness-50 transition-all duration-500 ease-in-out hover:animate-bounce-slow"
+            /></div
+        ></a>
+        <a href="#avhengighetSection"
+          ><div
+            class="w-96 h-96 overflow-hidden rounded-xl cursor-pointer flex justify-center items-center hover:keyframe-bounce-slow"
+          >
+            <h2 id="avhengighetText" class="absolute z-10 hidden">
+              Avhengighet
+            </h2>
+            <img
+              src="https://news.fordham.edu/wp-content/uploads/2018/05/Addiction-slider.jpg"
+              alt="dog"
+              id="avhengighet"
+              class="h-full w-full object-cover hover:scale-110 hover:brightness-50 transition-all duration-500 ease-in-out"
+            /></div
+        ></a>
+        <a href="#ulykkerSection"
+          ><div
+            class="w-96 h-96 overflow-hidden rounded-xl flex justify-center items-center cursor-pointer"
+          >
+            <h2 id="ulykkerText" class="absolute z-10 hidden">
+              Skader <br />
+              og <br />
+              ulykker
+            </h2>
+            <img
+              src="https://cloudinary.plyo.website/plyo/image/upload/f_auto,q_auto/c_lfill,g_center,h_1050,w_1920/v2/personskadesiden/xng5hszznlguoavvnhdo.jpg"
+              alt="dog"
+              id="ulykker"
+              class="h-full w-full object-cover hover:scale-110 hover:brightness-50 transition-all duration-500 ease-in-out"
+            /></div
+        ></a>
       </div>
     </section>
-    <section class="h-screen w-screen bg-blue-400"></section>
-    <section class="h-screen w-screen bg-green-400"></section>
-    <section class="h-screen w-screen bg-red-400"></section>
+    <section
+      id="helseSection"
+      class="h-screen w-screen flex flex-col items-center"
+    >
+      <h1 class="text-white text-5xl text-Text">Helseproblemer</h1>
+      <div class="bg-blue-400 h-2/3 w-screen">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section
+      id="avhengighetSection"
+      class="h-screen w-screen bg-green-400"
+    ></section>
+    <section id="ulykkerSection" class="h-screen w-screen bg-red-400"></section>
   </body>
 </html>
