@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker game!!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div class="max-w-sm p-4 bg-white rounded shadow">
+        <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
+        <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No, thanks." The goal is to hug 20 people.</p>
+        <p id="counter" class="text-3xl font-bold mb-4">0</p>
+        <div class=" bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-48 h-48 mb-6">
+            <img src="../src/img/hug.png" class="cursor-pointer absolute w-full h-full object-contain transition-all duration-500 transform hover:scale-105" id="button" alt="Button Image">
+        </div>
+        <button id="noButton" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">No thanks.</button>
+    </div>
+
+    <script>
+        let clicker = document.querySelector('#button');
+        let noButton = document.querySelector('#noButton');
+        let counterDisplay = document.querySelector('#counter');
+        let images = [
+            '../src/img/hug.png',
+            '../src/img/drugs.png'
+        ];
+        let randomImage = images[0];
+        let isNoButton = false;
+
+        function changePicture() {
+            if (randomImage === '../src/img/hug.png' && isNoButton === false) {
+                clicker.src = randomImage;
+                counter++;
+            } else if (randomImage === '../src/img/drugs.png' &&  isNoButton === false) {
+                clicker.src = randomImage;
+                alert('You found drugs! You are now addicted to drugs and you lose the game!');
+                location.reload();
+            } 
+            
+            randomImage = images[Math.floor(Math.random() * images.length)];
+            clicker.src= randomImage;
+            console.log(randomImage);
+
+            if (counter === 20) {
+                alert('You win!');
+                location.reload();
+            }
+        }
+
+        let counter = 0;
+        clicker.addEventListener('click', () => {
+            isNoButton = false;
+            changePicture();
+            
+            
+            counterDisplay.textContent = counter;
+        });
+
+        noButton.addEventListener('click', () => {
+            isNoButton = true;
+            changePicture();
+        });
+    </script>
+</body>
+</html>
