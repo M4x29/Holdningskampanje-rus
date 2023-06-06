@@ -3,6 +3,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+<<<<<<< Updated upstream
       colors: {
         Text: "#080802",
         Background: "#fafbee",
@@ -10,6 +11,9 @@ module.exports = {
         "Secondary-Button": "#f2f4d2",
         Accent: "#671862",
       },
+=======
+     
+>>>>>>> Stashed changes
     },
   },
   plugins: [],
