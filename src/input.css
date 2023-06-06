@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< Updated upstream
 
 html {
   scroll-behavior: smooth;
@@ -11,3 +12,5 @@ html {
   font-weight: 400;
   font-style: normal;
 }
+=======
+>>>>>>> Stashed changes
