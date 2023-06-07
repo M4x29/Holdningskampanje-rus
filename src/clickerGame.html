@@ -5,62 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker game!!</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="input.css" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/yef3mcm.css" />
 </head>
-<body class="flex flex-col items-center justify-center h-screen bg-gray-100">
-    <div class="max-w-sm p-4 bg-white rounded shadow">
-        <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
-        <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No, thanks." The goal is to hug 20 people.</p>
-        <p id="counter" class="text-3xl font-bold mb-4">0</p>
-        <div class=" bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-48 h-48 mb-6">
-            <img src="../src/img/hug.png" class="cursor-pointer absolute w-full h-full object-contain transition-all duration-500 transform hover:scale-105" id="button" alt="Button Image">
+
+<body >
+    <nav
+        class="flex flex-row just w-screen h-12 pl-20 fixed text-xl bg-black bg-opacity-50"
+      >
+        <a href="/src/index.html">
+          <div
+            class="flex justify-center items-center w-32 h-full text-slate-50 group transition-all duration-300 ease-in-out"
+          >
+            <span
+              class="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+              >Home</span
+            >
+          </div></a
+        >
+        <div class="w-20"></div>
+        <a href="/src/farer.html">
+          <div
+            class="flex justify-center items-center w-32 h-full text-slate-50 group transition-all duration-300 ease-in-out"
+          >
+            <span
+              class="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+              >Farer</span
+            >
+          </div></a
+        >
+        <a href="/src/clickerGame.html">
+          <div
+            class="flex justify-center items-center w-32 h-full text-slate-50 group transition-all duration-300 ease-in-out"
+          >
+            <span
+              class="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+              >Spill</span
+            >
+          </div></a
+        >
+        <div class="w-1/2"></div>
+        <a href="/src/kontakt.html">
+          <div
+            class="flex justify-center items-center w-32 h-full text-slate-50 group transition-all duration-300 ease-in-out"
+          >
+            <span
+              class="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+              >Kontakt</span
+            >
+          </div></a
+        >
+        <div class="w-32"></div>
+        <a href="/src/om_oss.html">
+          <div
+            class="flex justify-center items-center w-32 h-full text-slate-50 group transition-all duration-300 ease-in-out"
+          >
+            <span
+              class="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+              >Om oss</span
+            >
+          </div></a
+        >
+        <div class="w-12"></div>
+      </nav>
+    <main class="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <div class="max-w-sm p-4 bg-white rounded shadow">
+            <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
+            <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No, thanks." The goal is to hug 20 people.</p>
+            <p id="counter" class="text-3xl font-bold mb-4">0</p>
+            <div class=" bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-full  mb-6 flex justify-center items-center">
+                <img src="../src/img/hug.png" class="cursor-pointer w-2/3 h-2/3 object-contain transition-all duration-500 transform hover:scale-105" id="button" alt="Button Image">
+            </div>
+            <button id="noButton" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">No thanks.</button>
         </div>
-        <button id="noButton" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">No thanks.</button>
-    </div>
 
-    <script>
-        let clicker = document.querySelector('#button');
-        let noButton = document.querySelector('#noButton');
-        let counterDisplay = document.querySelector('#counter');
-        let images = [
-            '../src/img/hug.png',
-            '../src/img/drugs.png'
-        ];
-        let randomImage = images[0];
-        let isNoButton = false;
-
-        function changePicture() {
-            if (randomImage === '../src/img/hug.png' && isNoButton === false) {
-                clicker.src = randomImage;
-                counter++;
-            } else if (randomImage === '../src/img/drugs.png' &&  isNoButton === false) {
-                clicker.src = randomImage;
-                alert('You found drugs! You are now addicted to drugs and you lose the game!');
-                location.reload();
-            } 
-            
-            randomImage = images[Math.floor(Math.random() * images.length)];
-            clicker.src= randomImage;
-            console.log(randomImage);
-
-            if (counter === 20) {
-                alert('You win!');
-                location.reload();
-            }
-        }
-
-        let counter = 0;
-        clicker.addEventListener('click', () => {
-            isNoButton = false;
-            changePicture();
-            
-            
-            counterDisplay.textContent = counter;
-        });
-
-        noButton.addEventListener('click', () => {
-            isNoButton = true;
-            changePicture();
-        });
-    </script>
+    </main>
+    
+    
+    
 </body>
+<script>
+    let clicker = document.querySelector('#button');
+    let noButton = document.querySelector('#noButton');
+    let counterDisplay = document.querySelector('#counter');
+    let images = [
+        '../src/img/hug.png',
+        '../src/img/drugs.png'
+    ];
+    let randomImage = images[0];
+    let isNoButton = false;
+    
+    function changePicture() {
+        if (randomImage === '../src/img/hug.png' && isNoButton === false) {
+            clicker.src = randomImage;
+            counter++;
+        } else if (randomImage === '../src/img/drugs.png' &&  isNoButton === false) {
+            clicker.src = randomImage;
+            alert('You found drugs! You are now addicted to drugs and you lose the game!');
+            location.reload();
+        } 
+        
+        randomImage = images[Math.floor(Math.random() * images.length)];
+        clicker.src= randomImage;
+        console.log(randomImage);
+
+        if (counter === 20) {
+            alert('You win!');
+            location.reload();
+        }
+    }
+
+    let counter = 0;
+    clicker.addEventListener('click', () => {
+        isNoButton = false;
+        changePicture();
+        
+        
+        counterDisplay.textContent = counter;
+    });
+
+    noButton.addEventListener('click', () => {
+        isNoButton = true;
+        if(randomImage === '../src/img/hug.png') {
+            alert("You didn't hug! You die.");
+            location.reload();
+        }
+        else{
+            changePicture();
+        }
+        
+    });
+</script>
 </html>
