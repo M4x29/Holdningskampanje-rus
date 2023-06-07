@@ -81,7 +81,73 @@
           <a href="">Alkohol og trening</a>
         </div>
       </section>
-      <section></section>
+      <section>
+        <main class="flex flex-col items-center justify-center h-screen bg-gray-100">
+          <div class="max-w-sm p-4 bg-white rounded shadow">
+              <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
+              <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No, thanks." The goal is to hug 20 people.</p>
+              <p id="counter" class="text-3xl font-bold mb-4">0</p>
+              <div class=" bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-full  mb-6 flex justify-center items-center">
+                  <img src="../src/img/hug.png" class="cursor-pointer w-2/3 h-2/3 object-contain transition-all duration-500 transform hover:scale-105" id="button" alt="Button Image">
+              </div>
+              <button id="noButton" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">No thanks.</button>
+          </div>
+  
+        </main>
+        
+      </section>
     </main>
   </body>
+  <script>
+    let clicker = document.querySelector('#button');
+    let noButton = document.querySelector('#noButton');
+    let counterDisplay = document.querySelector('#counter');
+    let images = [
+        '../src/img/hug.png',
+        '../src/img/drugs.png'
+    ];
+    let randomImage = images[0];
+    let isNoButton = false;
+    
+    function changePicture() {
+        if (randomImage === '../src/img/hug.png' && isNoButton === false) {
+            clicker.src = randomImage;
+            counter++;
+        } else if (randomImage === '../src/img/drugs.png' &&  isNoButton === false) {
+            clicker.src = randomImage;
+            alert('You found drugs! You are now addicted to drugs and you lose the game!');
+            location.reload();
+        } 
+        
+        randomImage = images[Math.floor(Math.random() * images.length)];
+        clicker.src= randomImage;
+        console.log(randomImage);
+
+        if (counter === 20) {
+            alert('You win!');
+            location.reload();
+        }
+    }
+
+    let counter = 0;
+    clicker.addEventListener('click', () => {
+        isNoButton = false;
+        changePicture();
+        
+        
+        counterDisplay.textContent = counter;
+    });
+
+    noButton.addEventListener('click', () => {
+        isNoButton = true;
+        if(randomImage === '../src/img/hug.png') {
+            alert("You didn't hug! You die.");
+            location.reload();
+        }
+        else{
+            changePicture();
+        }
+        
+    });
+</script>
 </html>
