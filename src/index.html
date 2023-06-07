@@ -84,9 +84,9 @@
       </section>
       <section>
         <main class="flex flex-col items-center justify-center h-screen bg-gray-100">
-          <div class="max-w-sm p-4 bg-white rounded shadow">
+          <div class="max-w-lg p-4 bg-white rounded shadow">
               <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
-              <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No, thanks." The goal is to hug 20 people.</p>
+              <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No thanks." The goal is to hug 20 people. (a for click, s for "no, thanks.")</p>
               <p id="counter" class="text-3xl font-bold mb-4">0</p>
               <div class=" bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-full  mb-6 flex justify-center items-center">
                   <img src="../src/img/hug.png" class="cursor-pointer w-2/3 h-2/3 object-contain transition-all duration-500 transform hover:scale-105" id="button" alt="Button Image">
@@ -110,6 +110,7 @@
     let randomImage = images[0];
     let isNoButton = false;
     
+    
     function changePicture() {
         if (randomImage === '../src/img/hug.png' && isNoButton === false) {
             clicker.src = randomImage;
@@ -129,7 +130,23 @@
             location.reload();
         }
     }
-
+    document.addEventListener('keyup', (event) => {
+      if(event.key === 'a') {
+        isNoButton = false;
+        changePicture();
+        counterDisplay.textContent = counter;
+      }
+      if(event.key === 's') {
+        isNoButton = true;
+        if(randomImage === '../src/img/hug.png') {
+            alert("You didn't hug! You die.");
+            location.reload();
+        }
+        else{
+            changePicture();
+        }
+      }
+    }, false);
     let counter = 0;
     clicker.addEventListener('click', () => {
         isNoButton = false;
