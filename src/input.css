@@ -1,24 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< Updated upstream
 
 html {
   scroll-behavior: smooth;
 }
-=======
->>>>>>> Stashed changes
 
 * {
   font-family: "brim-narrow-combined-3", sans-serif;
   font-weight: 400;
   font-style: normal;
-<<<<<<< Updated upstream
 }
 
 #helseDiv:hover,
 #avhengighetDiv:hover,
-#ulykkerDiv:hover {
+#ulykkerDiv:hover,
+#alkohol-og-trening:hover {
   animation: bounce 0.5s infinite alternate;
 }
 
@@ -47,6 +44,3 @@ html {
     transform: translateY(170px);
   }
 }
-=======
-}
->>>>>>> Stashed changes
