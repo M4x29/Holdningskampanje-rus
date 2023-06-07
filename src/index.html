@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="input.css" />
   </head>
   <body>
-    <main class="flex flex-col h-screen w-screen">
+    <main class="flex flex-col min-h-screen w-screen">
       <nav
-        class="flex flex-row just w-screen h-12 pl-20 fixed text-xl bg-black bg-opacity-50"
+        class="flex flex-row just w-screen h-12 pl-20 fixed text-xl bg-black bg-opacity-50 z-20"
       >
         <a href="/src/index.html">
           <div
@@ -60,75 +60,126 @@
         >
         <div class="w-12"></div>
       </nav>
-      <section class="flex justify-center items-center bg-black w-full h-1/3">
-        <h1 class="text-8xl text-slate-50">Hugs not drugs!</h1>
+      <section class="h-screen w-screen">
+        <div class="flex justify-center items-center bg-black w-full h-1/3">
+          <h1 class="text-8xl text-slate-50">Hugs not drugs!</h1>
+        </div>
+        <section
+          class="flex flex-col gap-14 justify-center items-center white w-full h-2/3"
+        >
+          <a
+            href="alkohol-og-trening.html"
+            class="w-1/2 h-96 bg-white flex justify-center items-center text-center rounded-lg overflow-hidden hover:brightness-50 duration-500 cursor-pointer"
+            id="alkohol-og-trening"
+          >
+            <img
+              src="https://www.trening.no/wp-content/uploads/2019/09/Variert-trening-RW-TR-shutterstock_109581608-880x460.jpg"
+              alt="trening"
+              class="object-fit w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
+            />
+            <h1 class="text-7xl z-10 text-white absolute">
+              Alkohol <br />og<br />
+              trening
+            </h1>
+          </a>
+        </section>
       </section>
+
+      <section class="h-screen w-screen">
+        <main class="flex flex-col items-center justify-center h-full">
+          <h1 class="mb-12 text-6xl">Prøv spillet vårt!</h1>
+          <div class="max-w-sm p-4 bg-white rounded shadow">
+            <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
+            <p class="mb-4">
+              Click the button to increase the counter! When a drug appears,
+              click "No, thanks." The goal is to hug 20 people.
+            </p>
+            <p id="counter" class="text-3xl font-bold mb-4">0</p>
+            <div
+              class="bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-full mb-6 flex justify-center items-center"
+            >
+              <img
+                src="../src/img/hug.png"
+                class="cursor-pointer w-2/3 h-2/3 object-contain transition-all duration-500 transform hover:scale-105"
+                id="button"
+                alt="Button Image"
+              />
+            </div>
+            <button
+              id="noButton"
+              class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600"
+            >
+              No thanks.
+            </button>
+          </div>
+        </main>
+      </section>
+
       <section
-        class="flex flex-col gap-14 justify-center items-center white w-full h-2/3"
+        class="flex flex-col gap-14 justify-center items-center w-full h-2/3 h-screen w-screen"
       >
         <a
-          href="alkohol-og-trening.html"
+          href="farer.html"
           class="w-1/2 h-96 bg-white flex justify-center items-center text-center rounded-lg overflow-hidden hover:brightness-50 duration-500 cursor-pointer"
           id="alkohol-og-trening"
         >
           <img
-            src="https://www.trening.no/wp-content/uploads/2019/09/Variert-trening-RW-TR-shutterstock_109581608-880x460.jpg"
+            src="https://onkologia.org.pl/sites/default/files/media/2021-09/AdobeStock_191746592.jpeg"
             alt="trening"
             class="object-fit w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
           />
-          <h1 class="text-7xl z-10 text-white absolute">
-            Alkohol <br />og<br />
-            trening
-          </h1>
+          <h1 class="text-7xl z-10 text-white absolute">Farer</h1>
         </a>
       </section>
-      <section>
-        <main class="flex flex-col items-center justify-center h-screen bg-gray-100">
-          <div class="max-w-lg p-4 bg-white rounded shadow">
-              <h1 class="text-2xl font-bold mb-2">Say "NO" to drugs!</h1>
-              <p class="mb-4">Click the button to increase the counter! When a drug appears, click "No thanks." The goal is to hug 20 people. (a for click, s for "no, thanks.")</p>
-              <p id="counter" class="text-3xl font-bold mb-4">0</p>
-              <div class=" bg-[url('../src/img/handsOut.jpg')] bg-cover relative w-full  mb-6 flex justify-center items-center">
-                  <img src="../src/img/hug.png" class="cursor-pointer w-2/3 h-2/3 object-contain transition-all duration-500 transform hover:scale-105" id="button" alt="Button Image">
-              </div>
-              <button id="noButton" class="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600">No thanks.</button>
-          </div>
-  
-        </main>
-        
+
+      <section
+        class="flex flex-col gap-14 justify-center items-center w-full h-2/3 h-screen w-screen"
+      >
+        <a
+          href="farer.html"
+          class="w-1/2 h-96 bg-white flex justify-center items-center text-center rounded-lg overflow-hidden duration-500 cursor-pointer"
+          id="alkohol-og-trening"
+        >
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5eee731ceaa57e78d7b3f47f/1593151412879-KOO6VAVW9WHL6P2IZUWM/1.jpg?format=1000w"
+            alt="trening"
+            class="object-fit w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
+          />
+        </a>
       </section>
     </main>
   </body>
   <script>
-    let clicker = document.querySelector('#button');
-    let noButton = document.querySelector('#noButton');
-    let counterDisplay = document.querySelector('#counter');
-    let images = [
-        '../src/img/hug.png',
-        '../src/img/drugs.png'
-    ];
+    let clicker = document.querySelector("#button");
+    let noButton = document.querySelector("#noButton");
+    let counterDisplay = document.querySelector("#counter");
+    let images = ["../src/img/hug.png", "../src/img/drugs.png"];
     let randomImage = images[0];
     let isNoButton = false;
     
-    
     function changePicture() {
-        if (randomImage === '../src/img/hug.png' && isNoButton === false) {
-            clicker.src = randomImage;
-            counter++;
-        } else if (randomImage === '../src/img/drugs.png' &&  isNoButton === false) {
-            clicker.src = randomImage;
-            alert('You found drugs! You are now addicted to drugs and you lose the game!');
-            location.reload();
-        } 
-        
-        randomImage = images[Math.floor(Math.random() * images.length)];
-        clicker.src= randomImage;
-        console.log(randomImage);
+      if (randomImage === "../src/img/hug.png" && isNoButton === false) {
+        clicker.src = randomImage;
+        counter++;
+      } else if (
+        randomImage === "../src/img/drugs.png" &&
+        isNoButton === false
+      ) {
+        clicker.src = randomImage;
+        alert(
+          "You found drugs! You are now addicted to drugs and you lose the game!"
+        );
+        location.reload();
+      }
 
-        if (counter === 20) {
-            alert('You win!');
-            location.reload();
-        }
+      randomImage = images[Math.floor(Math.random() * images.length)];
+      clicker.src = randomImage;
+      console.log(randomImage);
+
+      if (counter === 20) {
+        alert("You win!");
+        location.reload();
+      }
     }
     document.addEventListener('keyup', (event) => {
       if(event.key === 'a') {
@@ -148,24 +199,21 @@
       }
     }, false);
     let counter = 0;
-    clicker.addEventListener('click', () => {
-        isNoButton = false;
-        changePicture();
-        
-        
-        counterDisplay.textContent = counter;
+    clicker.addEventListener("click", () => {
+      isNoButton = false;
+      changePicture();
+
+      counterDisplay.textContent = counter;
     });
 
-    noButton.addEventListener('click', () => {
-        isNoButton = true;
-        if(randomImage === '../src/img/hug.png') {
-            alert("You didn't hug! You die.");
-            location.reload();
-        }
-        else{
-            changePicture();
-        }
-        
+    noButton.addEventListener("click", () => {
+      isNoButton = true;
+      if (randomImage === "../src/img/hug.png") {
+        alert("You didn't hug! You die.");
+        location.reload();
+      } else {
+        changePicture();
+      }
     });
-</script>
+  </script>
 </html>
