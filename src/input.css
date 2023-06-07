@@ -17,7 +17,8 @@ h1 {
 
 #helseDiv:hover,
 #avhengighetDiv:hover,
-#ulykkerDiv:hover {
+#ulykkerDiv:hover,
+#alkohol-og-trening:hover {
   animation: bounce 0.5s infinite alternate;
 }
 
